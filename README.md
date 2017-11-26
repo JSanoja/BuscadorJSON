@@ -1,3 +1,13 @@
+# Buscador y filtrado en tiempo real
+
+#Backend
+- Peticiones y servidor controlado y creado con restify
+- El buscador esta hecho en json-query
+
+# Frontend
+- Renderizado con AngularJS
+- jQuery para algunos preload
+
 # Pasos para la instalacion
 
 1. Descomprimir en una carpeta
