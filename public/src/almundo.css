@@ -1,0 +1,317 @@
+:root {
+  --estrellas: #FDBA12;
+  --color-primario: #12417f;
+  --color-secundario: #0873AD;
+  --fuente-principal: 'Lato', sans-serif;
+  --precio: #FDBA12;
+  --parrafo: #6C6C6C;
+
+
+}
+p {
+    color: var(--parrafo);
+}
+body {
+    margin: 80px 0 0;
+    padding: 0;
+    font-family: var(--fuente-principal);
+    background: #F4F4F4;
+}
+header {
+    background: var(--color-primario);
+    height: 80px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding-left: 20px;
+}
+
+.logo {
+    height: 83px;
+    display: table-cell;
+    vertical-align: middle;
+}
+.logo img {
+  height: 50px;
+}
+
+.main {
+    padding: 20px;
+    background: #F4F4F4;
+    display: none;
+}
+.sidebar {
+    width: 20%;
+    margin-right: 20px;
+    display: inline-block;
+
+}
+.content {
+    width: 78%;
+    display: inline-block;
+}
+.tituloSidebar {
+    font-size: 16px;
+    font-weight: 900;
+    color: #3B3B3B;
+}
+
+.allstars {
+  font-size: 12px;
+  font-weight: 900;
+  color: #3B3B3B;
+}
+
+
+.sidebar-content {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.check-stars input {
+    margin-bottom: 7px;
+}
+.modulo-sidebar {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px;
+    background: white;
+    box-shadow: 0px 0px 2px 0px #d8d8d8;
+    margin-bottom: 5px;
+    color: var(--color-secundario);
+    border-bottom: 2px solid #F4F4F4;
+}
+.sidebar-icono svg {
+    height: 14px;
+    margin-right: 5px;
+    fill: var(--color-secundario);
+}
+.campo-hoteles {
+    width: 63%;
+    padding: 6px 2%;
+    border: 1px solid #D5D5D5;
+    box-shadow: 0px -1px #888888;
+    border-radius: 2px;
+}
+.boton-hoteles {
+    background: var(--color-primario);
+    border: none;
+    padding: 7.5px 10px;
+    color: white;
+    border-radius: 3px;
+    width: 30.3%;
+    transition: all 0.3s;
+}
+.boton-hoteles:hover, .precio-hotel button:hover {
+    cursor: pointer;
+    background: var(--color-secundario);
+}
+.cs-icono svg {
+    height: 12px;
+    fill: var(--estrellas);
+}
+.check-stars > div {
+    margin: 5px 0;
+}
+.modulo-hotel {
+    background: white;
+    padding: 8px;
+    box-shadow:  0px 0px 4px 0px rgba(50, 50, 50, 0.14);
+    height: 200px;
+    margin-bottom: 16px;
+}
+.foto-hotel {
+    float: left;
+    width: 30%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+.hotel-iconos img {
+    height: 20px;
+    float: left;
+    margin-right: 7px;
+}
+.centro-hotel {
+    width: 45%;
+    float: left;
+    padding: 0 0 0 20px;
+    border-right: 1px #d6d6d6;
+    border-right-style: dashed;
+    height: 200px;
+    margin-right: 10px;
+}
+.nombre-hotel h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: var(--color-secundario);
+}
+.sidebar-fixed {
+    position: fixed;
+    top: 100px;
+    width: 20%;
+}
+.precio-hotel {
+    text-align: center;
+}
+.precio-hotel p {
+    padding-top: 5px;
+    font-size: 12px;
+    line-height: 1.45;
+    color: #4F4F4F;
+}
+.precio-hotel button {
+    background: var(--color-primario);
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 3px;
+    box-shadow: 0px 1px black;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.precio-hotel h4 {
+    color: var(--precio);
+    font-size: 20px;
+}
+.precio-hotel span {
+    font-size: 26px;
+}
+.rs-icono svg {
+    height: 15px;
+    margin-bottom: 5px;
+    fill:var(--estrellas);
+}
+.menu-moviles {
+  display:none;
+  float: right;
+  font-size: 22px;
+  top: -5px;
+  position: relative;
+}
+.amenities svg {
+    height: 20px;
+    float: left;
+    margin-right: 10px;
+}
+.hotel-iconos {
+    margin-top: 7px;
+}
+.amenities svg path {
+    fill: #444444 !important;
+
+}
+.modulo-sidebar.mob {
+  display: none;
+}
+@media (max-width: 900px) {
+
+  .modulo-sidebar.mob .boton-hoteles {
+    width: 100%;
+  }
+  .menu-moviles {
+    display:block;
+    font-size: 30px;
+    top: -10px;
+  }
+  .modulo-sidebar.nom.abrir {display: block;}
+  .modulo-sidebar.nom.cerrar {display: none;}
+  .modulo-sidebar.est.abrir {display: block;}
+  .modulo-sidebar.est.cerrar {display: none;}
+  body {
+    margin: 50px 0 0;
+  }
+  header {
+      height: 50px;
+      padding-left: 10px;
+  }
+  .logo {
+      height: 55px;
+      display: table-cell;
+      vertical-align: middle;
+  }
+  .logo img {
+    height: 40px;
+  }
+  .main {
+    padding: 0;
+  }
+  .sidebar {
+      width: 100%;
+      margin-right: 0;
+      display: block;
+  }
+  .sidebar-fixed {
+    position: fixed;
+    width: 100%;
+  }
+  .sidebar-fixed {
+    position: fixed;
+    top: 50px;
+    width: 100%;
+  }
+  .modulo-sidebar.nom {
+    display: none;
+  }
+  .modulo-sidebar.est {
+    display: none;
+  }
+  .content {
+    width: 98%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 100px;
+  }
+  .modulo-hotel {
+    height: auto;
+    margin-bottom: 10px;
+  }
+  .foto-hotel {
+    float: none;
+    width: 100%;
+    height: 220px;
+  }
+  .centro-hotel {
+    width: 100%;
+    float: none;
+    padding: 0;
+    border-right: none;
+    border-bottom: 1px #d6d6d6;
+    border-bottom-style: dashed;
+    height: auto;
+    margin-right: 0;
+  }
+  .hotel-iconos {
+    height: 40px;
+  }
+  .centro-hotel {
+    margin-top: 10px;
+  }
+  .precio-hotel h4 {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  .precio-hotel button {
+      background: var(--color-primario);
+      border: none;
+      padding: 10px 10px;
+      color: white;
+      width: 100%;
+      border-radius: 3px;
+      margin-bottom: 5px;
+  }
+  .modulo-sidebar {
+
+    margin-bottom: 0;
+  }
+  .modulo-sidebar.nom button {
+    display: none;
+  }
+  .campo-hoteles {
+    width: 94%;
+  }
+  .modulo-sidebar.mob.abrir {
+    display: block;
+  }
+}

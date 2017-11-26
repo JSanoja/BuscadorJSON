@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es" ng-app="hoteles">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="src/almundo.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body ng-controller="main">
+    <header>
+      <div class="logo"><img src="assets/images/logo-almundo.svg"/></div>
+    </header>
+    <div class="main">
+      <div class="sidebar">
+       <div class="sidebar-fixed">
+        <div class="modulo-sidebar" >
+          <span class="tituloSidebar">Filtros</span>
+          <div class="menu-moviles " ng-click="menumovil()">≡</div>
+      </div>
+        <div class="modulo-sidebar nom {{clase}}" >
+          <div class="sidebar-header">
+            <span class="sidebar-icono" ng-include="'assets/icons/filters/search.svg'"></span>Nombre de Hotel
+            <div class="sidebar-content">
+              <input type="text" class="campo-hoteles" ng-model="campohoteles" ng-change="BuscarHotel()" placeholder="Buscar Hotel..."/>
+              <button class="boton-hoteles" ng-click="menumovil()">Aceptar</button>
+            </div>
+          </div>
+        </div>
+        <div class="modulo-sidebar est {{clase}}" >
+          <div class="sidebar-header">
+            <span class="sidebar-icono" ng-include="'assets/icons/filters/star.svg'"></span>Estrellas
+            <div class="sidebar-content check-stars">
+              <div class="check-stars">
+
+                  <input id="cero" name="estrellas" type="radio" ng-click="BuscarS(0)" checked />
+                    <label for="cero" class="allstars">Todas las estrellas</label></br>
+                  <input id="cinco" name="estrellas" type="radio" ng-click="BuscarS(5)" >
+                  <label for="cinco">
+                    <span class="cs-icono" ng-include="'assets/icons/filters/star.svg'"></span>
+                    <span class="cs-icono" ng-include="'assets/icons/filters/star.svg'"></span>
+                    <span class="cs-icono" ng-include="'assets/icons/filters/star.svg'"></span>
+                    <span class="cs-icono" ng-include="'assets/icons/filters/star.svg'"></span>
+                    <span class="cs-icono" ng-include="'assets/icons/filters/star.svg'"></span>
+                  </label></br>
+                  <input id="cuatro" name="estrellas" type="radio" ng-click="BuscarS(4)" />
+                  <label for="cuatro">
+                    <span class="cs-icono" ng-include="'assets/icons/filters/star.svg'"></span>
+                    <span class="cs-icono" ng-include="'assets/icons/filters/star.svg'"></span>
+                    <span class="cs-icono" ng-include="'assets/icons/filters/star.svg'"></span>
+                    <span class="cs-icono" ng-include="'assets/icons/filters/star.svg'"></span>
+                  </label></br>
+                  <input id="tres" name="estrellas" type="radio" ng-click="BuscarS(3)" />
+                  <label for="tres">
+                    <span class="cs-icono" ng-include="'assets/icons/filters/star.svg'"></span>
+                    <span class="cs-icono" ng-include="'assets/icons/filters/star.svg'"></span>
+                    <span class="cs-icono" ng-include="'assets/icons/filters/star.svg'"></span>
+                  </label></br>
+                  <input id="dos" name="estrellas" type="radio" ng-click="BuscarS(2)" />
+                  <label for="dos">
+                    <span class="cs-icono" ng-include="'assets/icons/filters/star.svg'"></span>
+                    <span class="cs-icono" ng-include="'assets/icons/filters/star.svg'"></span>
+                  </label></br>
+                  <input id="uno" name="estrellas" type="radio" ng-click="BuscarS(1)" />
+                  <label for="uno">
+                    <span class="cs-icono" ng-include="'assets/icons/filters/star.svg'"></span>
+                  </label></br>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modulo-sidebar mob {{clase}}" >
+          <button class="boton-hoteles" ng-click="menumovil()">Aceptar</button>
+        </div>
+       </div>
+      </div>
+      <div class="content">
+        <!-- Si quisiera mostrar la cantidad de hoteles que arroja la busqueda uso la siguiente linea -->
+        <!-- <div class="modulo-sidebar">Encontramos {{hoteles.length}} Hoteles para ti</div> -->
+        <div ng-repeat="hotel in hoteles" class="modulo-hotel">
+          <div class="foto-hotel" style="background-image:url(assets/images/hotels/{{ hotel.image }})" ></div>
+          <div class="centro-hotel">
+            <div class="nombre-hotel"><h3>{{ hotel.name }}</h3>	</div>
+            <div class="estrellas-hotel">
+              <div ng-if="hotel.stars==1">
+                <span class="rs-icono" ng-include="'assets/icons/filters/star.svg'"></span>
+              </div>
+              <div ng-if="hotel.stars==2">
+                <span class="rs-icono" ng-include="'assets/icons/filters/star.svg'"></span>
+                <span class="rs-icono" ng-include="'assets/icons/filters/star.svg'"></span>
+              </div>
+              <div ng-if="hotel.stars==3">
+                <span class="rs-icono" ng-include="'assets/icons/filters/star.svg'">
+                </span><span class="rs-icono" ng-include="'assets/icons/filters/star.svg'"></span>
+                <span class="rs-icono" ng-include="'assets/icons/filters/star.svg'"></span>
+              </div>
+              <div ng-if="hotel.stars==4">
+                <span class="rs-icono" ng-include="'assets/icons/filters/star.svg'"></span>
+                <span class="rs-icono" ng-include="'assets/icons/filters/star.svg'"></span>
+                <span class="rs-icono" ng-include="'assets/icons/filters/star.svg'"></span>
+                <span class="rs-icono" ng-include="'assets/icons/filters/star.svg'"></span>
+              </div>
+              <div ng-if="hotel.stars==5">
+                <span class="rs-icono" ng-include="'assets/icons/filters/star.svg'"></span>
+                <span class="rs-icono" ng-include="'assets/icons/filters/star.svg'"></span>
+                <span class="rs-icono" ng-include="'assets/icons/filters/star.svg'"></span>
+                <span class="rs-icono" ng-include="'assets/icons/filters/star.svg'"></span>
+                <span class="rs-icono" ng-include="'assets/icons/filters/star.svg'"></span>
+              </div>
+            </div>
+            <div class="hotel-iconos">
+              <div ng-repeat="icono in hotel.amenities">
+                <span class="amenities" ng-include="'assets/icons/amenities/'+icono+'.svg'"></span>
+              </div>
+            </div>
+          </div>
+          <div class="precio-hotel">
+            <p>Precio por noche por</br>habitación</p>
+            <h4>ARS <span>{{ hotel.price }}</span> </h4>
+            <button>VER HOTEL</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="src/almundo.js"></script>
+  </body>
+</html>
