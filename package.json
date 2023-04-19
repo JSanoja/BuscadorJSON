@@ -6,7 +6,7 @@
     "bootstrap": "^4.3.1",
     "jquery": "^3.5.0",
     "json-query": "^2.2.2",
-    "restify": "4.3.1"
+    "restify": "4.3.4"
   },
   "keywords": [],
   "author": "Juan Sanoja",
